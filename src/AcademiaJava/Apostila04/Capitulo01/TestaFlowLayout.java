@@ -22,7 +22,13 @@ public class TestaFlowLayout extends JFrame{
 		JPanel panel = new JPanel();
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		JButton btnOK = new JButton("OK");
-		btnOK.addMouseListener(new EventosMouse());
+		btnOK.addMouseListener(new MouseAdapter(){
+			@Override
+			public void mouseClicked(MouseEvent e){
+				System.out.println("2 Clique!!!!!");
+			}
+		
+		});
 		panel.add(btnOK);
 		panel.add(new JButton("Cancelar"));
 		return panel;
@@ -61,12 +67,6 @@ public class TestaFlowLayout extends JFrame{
 	}
 	public static void main(String[] args) {
 		TestaFlowLayout t = new TestaFlowLayout();
-	}
-	class EventosMouse extends MouseAdapter{
-		@Override
-		public void mouseClicked(MouseEvent e){
-			System.out.println("Clicou!!!!!!!!!!!");
-		}
 	}
 
 }
