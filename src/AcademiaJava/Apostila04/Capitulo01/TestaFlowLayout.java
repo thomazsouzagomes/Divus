@@ -17,7 +17,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
-public class TestaFlowLayout extends JFrame implements MouseListener{
+public class TestaFlowLayout extends JFrame{
 	public JPanel montaPanelBotoes(){
 		JPanel panel = new JPanel();
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER));
