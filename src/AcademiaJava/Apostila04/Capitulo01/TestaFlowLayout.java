@@ -5,6 +5,7 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.Panel;
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
@@ -21,7 +22,7 @@ public class TestaFlowLayout extends JFrame implements MouseListener{
 		JPanel panel = new JPanel();
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		JButton btnOK = new JButton("OK");
-		btnOK.addMouseListener(this);
+		btnOK.addMouseListener(new EventosMouse());
 		panel.add(btnOK);
 		panel.add(new JButton("Cancelar"));
 		return panel;
@@ -61,31 +62,11 @@ public class TestaFlowLayout extends JFrame implements MouseListener{
 	public static void main(String[] args) {
 		TestaFlowLayout t = new TestaFlowLayout();
 	}
-	@Override
-	public void mouseClicked(MouseEvent arg0) {
-		System.out.println("Clicado!!!");
-		setTitle("Novo Título!!!!!!!!!!!");
-		
+	class EventosMouse extends MouseAdapter{
+		@Override
+		public void mouseClicked(MouseEvent e){
+			System.out.println("Clicou!!!!!!!!!!!");
+		}
 	}
 
-	@Override
-	public void mouseEntered(MouseEvent arg0) {
-		System.out.println("Em Cima do Botão!!!");
-		
-	}
-
-	@Override
-	public void mouseExited(MouseEvent arg0) {
-		System.out.println("Saiu do Botão!!!");
-	}
-
-	@Override
-	public void mousePressed(MouseEvent arg0) {
-		System.out.println("Pressionado!!!");
-	}
-
-	@Override
-	public void mouseReleased(MouseEvent arg0) {
-		System.out.println("Pressionado Sem Está Clicado!!!");
-	}
 }
